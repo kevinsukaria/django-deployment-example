@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block body_block %}
+<h1>Which path are you going to take?</h1>
+<a href="{% url 'first_app:home' %}">go back to homepage</a>
+<ul>
+	<li><a href="{% url 'fourth_app:path1' %}">Path 1</a></li>
+	<li><a href="{% url 'fourth_app:path2' %}">Path 2</a></li>
+</ul>
+{% endblock %}}

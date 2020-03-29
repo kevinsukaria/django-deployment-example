@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block body_block %}
+	<h1>Welcome, below is your user list</h1>
+	<a href="/">go back to homepage</a>
+	<div class="row">
+
+		<div class="col-lg-6">
+			<ol>
+				{% for val in users %}
+				<li>User info :</li>
+				<ul>
+					<li>First name  : {{val.first_name}}</li>
+					<li>Last name   : {{val.last_name}}</li>
+					<li>Email       : {{val.email}}</li>
+				</ul>
+				{% endfor %}
+			</ol>
+
+		</div>
+
+		<div class="col-lg-6">
+			<form method="POST">
+				{{ form.as_p }}
+				{% csrf_token %}
+				<input type="submit" class="btn btn-primary">
+			</form>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

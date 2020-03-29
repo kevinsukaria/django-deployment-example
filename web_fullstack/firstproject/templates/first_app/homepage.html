@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block body_block %}
+{% csrf_token %}
+<div class="jumbotron">
+	<h1 class="display-4"><strong>Welcome to Kevin's Django Project</strong></h1>
+	<p class="lead"><em>"This page serves as the home page of Kevin's Django project from Udemy courses"</em></p>
+	<hr class="my-4">
+	<h4>Available directories :</h4>
+	<ol>
+		<li><a href="{% url 'first_app:index' %}">/first_app</a></li>
+		<li><a href="{% url 'second_app:help' %}">/second_app</a></li>
+		<li><a href="{% url 'third_app:users' %}">/third_app</a></li>
+		<li><a href="{% url 'fourth_app:fork' %}">/fourth_app</a></li>
+		<li><a href="{% url 'forms:forms' %}">/form</a></li>
+	</ol>
+	<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+</div>
+{% endblock %}
